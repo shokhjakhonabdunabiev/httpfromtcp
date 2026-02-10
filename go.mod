@@ -1,4 +1,4 @@
-module httpfromtcp
+module github.com/shokhjakhonabdunabiev/httpfromtcp
 
 go 1.25.4
 
