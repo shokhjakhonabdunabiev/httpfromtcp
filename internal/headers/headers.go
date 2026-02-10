@@ -17,6 +17,7 @@ func NewHeaders() Headers {
 
 func (h Headers) Parse(data []byte) (n int, done bool, err error) {
 	// print the data with crlf encoding
+
 	idx := bytes.Index(data, []byte(crlf))
 	if idx == -1 {
 		return 0, false, nil
@@ -58,6 +59,11 @@ func (h Headers) Set(key, value string) {
 			value,
 		}, ", ")
 	}
+	h[key] = value
+}
+
+func (h Headers) Override(key, value string) {
+	key = strings.ToLower(key)
 	h[key] = value
 }
 
